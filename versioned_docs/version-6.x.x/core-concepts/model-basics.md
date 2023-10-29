@@ -438,8 +438,12 @@ Foo.init({
   // autoIncrement can be used to create auto_incrementing integer columns
   incrementMe: { type: DataTypes.INTEGER, autoIncrement: true },
 
-  // You can specify a custom column name via the 'field' attribute:
-  fieldWithUnderscores: { type: DataTypes.STRING, field: 'field_with_underscores' },
+ // You can specify a custom column name using the 'field' attribute:
+ // - 'fieldWithUnderscores' is the JavaScript attribute name that you'll use in your code.
+ // - 'field_with_underscores' is the name of the actual database column in the table that this attribute corresponds to.
+ // - The 'field' property specifies the name of the column in the database.
+ fieldWithUnderscores: { type: DataTypes.STRING, field: 'field_with_underscores' },
+
 
   // It is possible to create foreign keys:
   bar_id: {
